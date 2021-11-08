@@ -1,6 +1,18 @@
+import example.*
 
-test "testX" {
 
-	assert.that(true)
-
+describe "Subir a expediciones"{
+	
+	
+	test "Un Soldado productivo con 1 arma de casta karl puede subir a expedicion"{
+		const vikingoSoldado = new Soldado(castaSocial = "karl", cantArmas = 1, vidasCobradas = 21)
+		assert.that(vikingoSoldado.puedeSubirAExpedicion())
+	}
+	
+	test "Un Soldado productivo de las casta jarl no puede subir a expedicion"{
+		const vikingoSoldado = new Soldado(castaSocial = "jarl", cantArmas = 1, vidasCobradas = 21)
+		assert.notThat(vikingoSoldado.puedeSubirAExpedicion())
+	}
+	
+	
 }
